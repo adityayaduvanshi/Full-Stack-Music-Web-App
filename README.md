@@ -8,6 +8,9 @@ Welcome to the Music Web Application repository! This project aims to provide us
 
 https://beatboxx.vercel.app/
 
+## Project Demo video
+https://youtu.be/MWWtlCL7dP4
+
 
 ## Features
 
@@ -23,7 +26,19 @@ https://beatboxx.vercel.app/
 
 ## Screenshots
 ![screenshot1](screenshot.PNG)
+
+ **Add songs by clicking on plus button in my library** 
 ![screenshot2](screenshot1.PNG)
+Liked songs page
+![screenshot2](screenshot2.PNG)
+
+**Handle Subscription in my account**
+![screenshot3](screenshot5.PNG)
+![screenshot3](screenshot3.PNG)
+
+**Full Responsive**
+
+![screenshot4](screenshot4.PNG)
 
 
 ## Tech Stack
