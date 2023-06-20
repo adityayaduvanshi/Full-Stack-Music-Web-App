@@ -21,6 +21,10 @@ https://beatboxx.vercel.app/
 - Navigate to the next or previous song in the playlist.
 
 
+## Screenshots
+![screenshot1](screenshot.PNG)
+
+
 ## Tech Stack
 
 - **Next.js:** A React framework for server-side rendering and building scalable web applications.
