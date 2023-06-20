@@ -23,6 +23,7 @@ https://beatboxx.vercel.app/
 
 ## Screenshots
 ![screenshot1](screenshot.PNG)
+![screenshot2](screenshot1.PNG)
 
 
 ## Tech Stack
