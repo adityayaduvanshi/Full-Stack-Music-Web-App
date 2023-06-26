@@ -38,7 +38,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
       <div className="flex items-center justify-between px-5 pt-4">
         <div className="inline-flex items-center gap-x-2">
           <TbPlaylist size={26} className="text-neutral-400" />
-          <p className="text-neutral-400 text-md font-medium">Your Library</p>
+          <p className="text-neutral-400 text-md font-medium">Add Song</p>
         </div>
         <AiOutlinePlus
           onClick={onClick}
