@@ -1,5 +1,5 @@
 {
-  "name": "spotify-clone",
+  "name": "stem-space",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.7.1",
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-slider": "^1.1.2",
     "@stripe/stripe-js": "^1.54.0",
@@ -23,7 +24,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
-    "next": "13.4.4",
+    "next": "^13.4.4",
     "postcss": "8.4.24",
     "query-string": "^8.1.0",
     "react": "18.2.0",
@@ -32,9 +33,12 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.9.0",
     "react-spinners": "^0.13.8",
+    "replicate": "^0.22.0",
+    "resend": "^2.1.0",
     "stripe": "^12.8.0",
     "tailwind-merge": "^1.13.0",
     "tailwindcss": "3.3.2",
+    "transloadit": "^3.0.2",
     "typescript": "5.1.3",
     "uniqid": "^5.4.0",
     "use-sound": "^4.0.1",
@@ -42,6 +46,6 @@
   },
   "devDependencies": {
     "@types/uniqid": "^5.3.2",
-    "supabase": "^1.64.8"
+    "supabase": "^1.127.4"
   }
 }
