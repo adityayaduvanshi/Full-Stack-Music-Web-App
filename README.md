@@ -1,5 +1,6 @@
+Forked from Beatboxxx.
 
-# Beatboxx | Music Web Application
+### Beatboxx | Music Web Application
 
 Welcome to the Music Web Application repository! This project aims to provide users with a feature-rich, fully responsive music streaming platform similar to Spotify. Users can discover, listen to, and upload their own songs seamlessly on any device. The application is built using Next.js13, React, TypeScript, and Supabase, offering a delightful and consistent user experience across various screen sizes.
 
@@ -56,11 +57,11 @@ Liked songs page
  1. Clone the repository:
 
  ```bash
-  git clone https://github.com/adityayaduvanshi/Full-Stack-Music-Web-App.git
+  git clone https://github.com/IsaacBell/Stem-Space.git
  ```
 2. Install dependencies:    
 ```bash
- cd yourrepository
+ cd Stem-Space
  npm install
 ```
 3. Set up environment variables:  
