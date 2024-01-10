@@ -13,7 +13,7 @@ import getActiveProductwithPrices from '@/actions/getActiveProductwithPrices';
 const font = Figtree({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Beatboxx',
+  title: 'Stem Space',
   description: 'Listen and upload your songs',
 };
 

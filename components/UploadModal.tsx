@@ -102,7 +102,7 @@ const UploadModal = () => {
   return (
     <Modal
       title="Add a song"
-      description="Upload an mp3 file"
+      description="Upload a music file"
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
@@ -129,17 +129,26 @@ const UploadModal = () => {
             id="song"
             disabled={isLoading}
             {...register('song', { required: true })}
-            accept=".mp3"
+            accept="audio/*"
           />
         </div>
         <div className="pb-1">
-          <div>Select an image</div>
+          <div>Upload cover art</div>
           <Input
             type="file"
             id="image"
             disabled={isLoading}
             {...register('image', { required: true })}
             accept="image/*"
+          />
+        </div>
+        <div className="pb-1">
+          <div>Generate cover art</div>
+          <Input
+            id="image-gen"
+            disabled={isLoading}
+            placeholder="Description of your cover"
+            {...register('image-gen', { required: true })}
           />
         </div>
         <Button disabled={isLoading} type="submit">

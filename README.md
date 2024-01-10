@@ -66,37 +66,10 @@ Liked songs page
 3. Set up environment variables:  
 
  - Create a `.env.local` file in the root directory.
- - Add the following environment variables and replace the values with your own:
- ```bash
- NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
- NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
- SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
- NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
- STRIPE_SECRET_KEY=your_stripe_secret_key
- STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
- ```
+
 4. Run the application:
 ```bash
 npm run dev
 ```
 5. Open your browser and visit `http://localhost:3000` to access the application.
-
-## Contributing
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
- 1. Fork the repository.
- 2. Create a new branch for your feature or bug fix.
- 3. Make your changes and commit them with descriptive commit messages.
- 4. Push your changes to your forked repository.
- 5. Submit a pull request, explaining the changes you've made.
-
-Please make sure to adhere to the existing code style and guidelines.
-
-
-## Contact
-
-- Email: aditya.yadsr@gmail.com
-- Twitter: @fixslyr
-
-
 
