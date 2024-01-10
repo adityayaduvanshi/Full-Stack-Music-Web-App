@@ -40,8 +40,6 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     }
   };
 
-  console.log(user?.user_metadata.avatar_url);
-
   return (
     <div
       className={twMerge(

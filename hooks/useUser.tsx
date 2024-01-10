@@ -7,10 +7,10 @@ import {
 } from '@supabase/auth-helpers-react';
 
 type UserContextType = {
-  accessToken: string | null;
   user: User | null;
-  userDetails: UserDetails | null;
   isLoading: boolean;
+  accessToken: string | null;
+  userDetails: UserDetails | null;
   subscription: Subscription | null;
 };
 
@@ -31,19 +31,19 @@ export const MyUserContextProvider = (props: Props) => {
   const user = useSupaUser();
   const accessToken = session?.access_token ?? null;
   const [isLoadingData, setIsLoadingData] = useState(false);
-  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
-  const [subscription, setSubscription] = useState<Subscription | null>(null);
+  const [userDetails, setUserDetails] = useState<UserDetails | null | undefined>(undefined);
+  const [subscription, setSubscription] = useState<Subscription | null | undefined>(undefined);
 
-  const getUserDetails = () => supabase.from('users').select('*').single();
+  const getUserDetails = () => supabase.from('users').select('*').maybeSingle();
   const getSubscription = () =>
     supabase
       .from('subscriptions')
       .select('*, prices(* , products(*))')
-      .in('status', ['trialing', 'active'])
-      .single();
+      // .in('status', ['trialing', 'active'])
+      .maybeSingle();
 
   useEffect(() => {
-    if (user && !isLoadingData && !userDetails && !subscription) {
+    if (user && !isLoadingData && userDetails !== undefined && subscription !== undefined) {
       setIsLoadingData(true);
       Promise.allSettled([getUserDetails(), getSubscription()]).then(
         (results) => {

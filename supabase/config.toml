@@ -98,13 +98,13 @@ enable_confirmations = false
 # Allow/disallow new user signups via SMS to your project.
 enable_signup = true
 # If enabled, users need to confirm their phone number before signing in.
-enable_confirmations = false
+enable_confirmations = true
 # Template for sending OTP to users
 template = "Your code is {{ .Code }} ."
 
 # Use pre-defined map of phone number to OTP for testing.
 [auth.sms.test_otp]
-# 4152127777 = "123456"
+1234567890 = "123456"
 
 # Configure one of the supported SMS providers: `twilio`, `twilio_verify`, `messagebird`, `textlocal`, `vonage`.
 [auth.sms.twilio]

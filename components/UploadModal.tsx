@@ -46,16 +46,17 @@ const UploadModal = () => {
         toast.error('Missing fields');
         return;
       }
-      const uniqId = uniqid();
+      // const uniqId = uniqid();
 
       //upload song
       const { data: songData, error: songError } = await supabaseClient.storage
         .from('songs')
-        .upload(`song-${values.title}-${uniqId}`, songFile, {
+        .upload(`image_${user?.id}_${values.song?.[0]?.name}`, songFile, {
           cacheControl: '3600',
           upsert: false,
         });
 
+        console.log({songData, songError})
       if (songError) {
         setisLoading(false);
         return toast.error('Failed song upload');
@@ -64,10 +65,11 @@ const UploadModal = () => {
       const { data: imageData, error: imageError } =
         await supabaseClient.storage
           .from('images')
-          .upload(`image-${values.title}-${uniqId}`, imageFile, {
+          .upload(`image_${user?.id}_${values?.song_name ?? 'upload'}`, imageFile, {
             cacheControl: '3600',
             upsert: false,
           });
+          console.log({imageData, imageError})
       if (imageError) {
         setisLoading(false);
         return toast.error('Failed image upload');
@@ -84,6 +86,7 @@ const UploadModal = () => {
         });
 
       if (supabaseError) {
+        console.log({supabaseError})
         setisLoading(false);
         return toast.error(supabaseError.message);
       }
