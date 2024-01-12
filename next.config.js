@@ -7,6 +7,9 @@ const nextConfig = {
       'https://3000-isaacbell-fullstackmusi-k4bf2x74hut.ws-us107.gitpod.io',
     ],
   },
+  experimental: {
+    instrumentationHook: true
+  }
 };
 
 module.exports = nextConfig;
