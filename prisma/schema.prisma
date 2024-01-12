@@ -69,6 +69,14 @@ model songs {
   title      String?  @default("") @db.VarChar
   user_id    String?  @db.VarChar
   likes      likes[]
+  description	String	@default("") @db.VarChar
+  genre	String	@default("") @db.VarChar
+  mood	String	@default("") @db.VarChar
+  tags	String	@default("") @db.VarChar
+  release_date	String	@default("") @db.VarChar
+  remix_of	BigInt?
+  duration String	@default("") @db.VarChar
+  downloadable String	@default("") @db.VarChar
 }
 
 model subscriptions {
@@ -99,3 +107,4 @@ model users {
   full_name        String?  @db.VarChar
   payment_method   Json?    @db.Json
 }
+
