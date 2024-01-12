@@ -1,12 +1,17 @@
 {
-  "name": "stem-space",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pg:gen": "dotenv -e .env.local -- npx prisma generate",
+    "pg:migrate": "dotenv -e .env.local -- npx prisma migrate dev",
+    "pg:migrate:deploy": "dotenv -e .env.local -- npx prisma migrate deploy",
+    "pg:pull": "dotenv -e .env.local -- npx prisma db pull",
+    "pg:push": "dotenv -e .env.local -- npx prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^5.7.1",

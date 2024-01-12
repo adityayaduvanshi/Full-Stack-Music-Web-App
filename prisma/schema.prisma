@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model customers {
+  id                 BigInt   @id @default(autoincrement())
+  created_at         DateTime @default(now()) @db.Timestamptz(6)
+  stripe_customer_id String?  @db.VarChar
+}
+
+model likes {
+  id         BigInt   @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  song_id    BigInt?
+  user_id    String?  @db.VarChar
+  songs      songs?   @relation(fields: [song_id], references: [id], onDelete: Cascade)
+}
+
+model prices {
+  id                BigInt          @id @default(autoincrement())
+  created_at        DateTime        @default(now()) @db.Timestamptz(6)
+  active            Boolean?
+  currency          String?         @db.VarChar
+  description       String?         @db.VarChar
+  interval          BigInt?
+  interval_count    BigInt?
+  metadata          Json?           @db.Json
+  product_id        String?         @db.VarChar
+  trial_period_days BigInt?
+  unit_amount       BigInt?
+  products          products[]
+  subscriptions     subscriptions[]
+}
+
+model products {
+  id          BigInt   @id @default(autoincrement())
+  created_at  DateTime @default(now()) @db.Timestamptz(6)
+  active      Boolean?
+  description String?  @db.VarChar
+  image       String?  @db.VarChar
+  metadata    Json?    @db.Json
+  name        String?  @db.VarChar
+  price_id    BigInt?
+  prices      prices?  @relation(fields: [price_id], references: [id], onDelete: Cascade)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model profiles {
+  id         String    @id @db.Uuid
+  updated_at DateTime? @db.Timestamptz(6)
+  email      String?
+  username   String?   @unique
+  avatar_url String?
+  website    String?
+}
+
+model songs {
+  id         BigInt   @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  author     String?  @db.VarChar
+  image_path String?  @db.VarChar
+  song_path  String?  @db.VarChar
+  title      String?  @default("") @db.VarChar
+  user_id    String?  @db.VarChar
+  likes      likes[]
+}
+
+model subscriptions {
+  id                    BigInt   @id @default(autoincrement())
+  created_at            DateTime @default(now()) @db.Timestamptz(6)
+  cancel_at_            String?  @map("cancel_at ") @db.VarChar
+  cancel_at_period_end_ Boolean? @map("cancel_at_period_end ")
+  canceled_at_          String?  @map("canceled_at ") @db.VarChar
+  created               String?  @db.VarChar
+  current_period_end    String?  @db.VarChar
+  current_period_start  String?  @db.VarChar
+  ended_at              String?  @db.VarChar
+  metadata              Json?    @db.Json
+  quantity              Int?
+  trial_end             String?  @db.VarChar
+  trial_start           String?  @db.VarChar
+  user_id               String?  @db.VarChar
+  status                String?  @db.VarChar
+  price_id              BigInt?
+  prices                prices?  @relation(fields: [price_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+  id               BigInt   @id @default(autoincrement())
+  created_at       DateTime @default(now()) @db.Timestamptz(6)
+  avatar_url       String?  @db.VarChar
+  billing_address_ Json?    @map("billing_address ") @db.Json
+  full_name        String?  @db.VarChar
+  payment_method   Json?    @db.Json
+}
