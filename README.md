@@ -75,11 +75,16 @@ Liked songs page
  STRIPE_SECRET_KEY=your_stripe_secret_key
  STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
  ```
-4. Run the application:
+4. Add SQL Tables:
+
+     Use `database.sql` file, create songs and liked_songs table 
+ 
+
+5. Run the application:
 ```bash
 npm run dev
 ```
-5. Open your browser and visit `http://localhost:3000` to access the application.
+6. Open your browser and visit `http://localhost:3000` to access the application.
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
